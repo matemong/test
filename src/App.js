@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
-
+//import Scroll from './Scroll'
 import './App.css'
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 
 class App extends Component
 {
@@ -36,9 +38,13 @@ class App extends Component
 			<div className='tc'>
 				<h1 className='f1'>Robotok</h1>
 				<SearchBox className='br-pill' searchChange={this.onSearchChange}/>
-				<CardList robots={filteredRobots}/>
+				{/*<Scroll>*/}
+				<SimpleBar style={{height: '600px'}}>
+					<CardList robots={filteredRobots}/>
+				</SimpleBar>
+				{/*</Scroll> */}
 			</div>
-			)
+			);
 		}
 	}
 }
